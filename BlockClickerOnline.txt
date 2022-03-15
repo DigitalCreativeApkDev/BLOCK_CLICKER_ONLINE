@@ -22,8 +22,12 @@ Buttons
         name:Make a block
         desc:Click this block to earn blocks!
         on click:anim icon wobble
-        on click:yield 1 block
-        on click:if (chance(3%)) yield 1 gem
+        on click:
+            yield 1 block
+            if (chance(3%))
+                yield 1 gem
+            end
+        end
         icon:https://github.com/DigitalCreativeApkDev/BLOCK_CLICKER_ONLINE/blob/main/block.png
         no text
         
