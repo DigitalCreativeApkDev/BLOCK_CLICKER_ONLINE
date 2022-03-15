@@ -23,7 +23,7 @@ Buttons
         desc:Click this block to earn blocks!
         on click:anim icon wobble
         on click:yield 1 block
-        on click:if chance(3%) yield 1 gem
+        on click:if (chance(3%)) yield 1 gem
         icon:https://github.com/DigitalCreativeApkDev/BLOCK_CLICKER_ONLINE/blob/main/block.png
         no text
         
