@@ -21,6 +21,9 @@ Buttons
     *blockButton
         name:Make a block
         desc:Click this block to earn blocks!
+        on click:anim icon wobble
+        on click:yield 1 block
+        on click:if chance(3%) yield 1 gem
         icon:https://github.com/DigitalCreativeApkDev/BLOCK_CLICKER_ONLINE/blob/main/block.png
         no text
         
@@ -39,4 +42,321 @@ Resources
         
 Shinies
     *luckyBlock
+        on click:log Woop
+        frequency:60
+        frequency variation:30
+        movement:onRight moveLeft fade bounce:0.05
+        class:bigButton
+        on click:
+            if (chance(15%))
+                $boost=random(1, 10)
+                // get between 1 to 5 minutes of the production of blocks
+                $amount=random(blocks:ps*60*1,blocks:ps*60*3)*$boost
+                toast The lucky block grants you<//><b>[$amount] blocks</b>.
+                yield $amount blocks
+            else
+                $newGems=random(1, 10)
+                toast The lucky block grants you<//><b>[$newGems] gem[s?$newGems]</b>!
+				yield $newGems gems
+            end
+        end
+        icon:https://github.com/DigitalCreativeApkDev/BLOCK_CLICKER_ONLINE/blob/main/lucky_block.png
         
+Buildings
+	*TEMPLATE
+		on click:anim glow
+        
+    *silkLookout
+        name:Silk Lookout
+        desc:Silk Lookout Tower.<//><b>Effect:</b><.>Produces 1*pow(1.15, silkLookout) blocks every second.
+        cost:100 blocks
+        on tick:yield 1*pow(1.15, silkLookout) blocks
+        unlocked
+        
+    *courageTower
+        name:Courage Tower
+        desc:Courage Tower.<//><b>Effect:</b><.>Produces 100*pow(1.15, silkLookout) blocks every second.
+        cost:10000 blocks
+        on tick:yield 100*pow(1.15, silkLookout) blocks
+        req:10000 blocks:earned
+        
+    *divineTower
+        name:Divine Tower
+        desc:Divine Tower.<//><b>Effect:</b><.>Produces 100000*pow(1.15, divineTower) blocks every second.
+        cost:100000000 blocks
+        on tick:yield 100000*pow(1.15, divineTower) blocks
+        req:100000000 blocks:earned
+        
+    *visionMast
+        name:Vision Mast
+        desc:Vision Mast Tower.<//><b>Effect:</b><.>Produces 100000000*pow(1.15, visionMast) blocks every second.
+        cost:10000000000000 blocks
+        on tick:yield 100000000*pow(1.15, visionMast) blocks
+        req:10000000000000 blocks:earned
+        
+    *oracleTower
+        name:Oracle Tower
+        desc:Oracle Tower.<//><b>Effect:</b><.>Produces 100000000000*pow(1.15, oracleTower) blocks every second.
+        cost:1000000000000000000 blocks
+        on tick:yield 100000000000*pow(1.15, oracleTower) blocks
+        req:1000000000000000000 blocks:earned
+        
+    *roughBeachSpire
+        name:Rough Beach Spire
+        desc:Rough Beach Spire.<//><b>Effect:</b><.>Produces 100000000000000*pow(1.15, roughBeachSpire) blocks every second.
+        cost:100000000000000000000000 blocks
+        on tick:yield 100000000000000*pow(1.15, roughBeachSpire) blocks
+        req:100000000000000000000000 blocks:earned
+        
+    *divineLookout
+        name:Divine Lookout
+        desc:Divine Lookout Tower.<//><b>Effect:</b><.>Produces 100000000000000000*pow(1.15, divineLookout) blocks every second.
+        cost:10000000000000000000000000000 blocks
+        on tick:yield 100000000000000000*pow(1.15, divineLookout) blocks
+        req:10000000000000000000000000000 blocks:earned
+        
+    *tribulationTower
+        name:Tribulation Tower
+        desc:Tribulation Tower.<//><b>Effect:</b><.>Produces 100000000000000000000*pow(1.15, tribulationTower) blocks every second.
+        cost:1000000000000000000000000000000000 blocks
+        on tick:yield 100000000000000000000*pow(1.15, tribulationTower) blocks
+        req:1000000000000000000000000000000000 blocks:earned
+        
+    *purityPillar
+        name:Purity Pillar
+        desc:Purity Pillar.<//><b>Effect:</b><.>Produces 100000000000000000000000*pow(1.15, purityPillar) blocks every second.
+        cost:100000000000000000000000000000000000000 blocks
+        on tick:yield 100000000000000000000000*pow(1.15, purityPillar) blocks
+        req:100000000000000000000000000000000000000 blocks:earned
+        
+    *onyxSpire
+        name:Onyx Spire
+        desc:Onyx Spire.<//><b>Effect:</b><.>Produces 100000000000000000000000000*pow(1.15, onyxSpire) blocks every second.
+        cost:10000000000000000000000000000000000000000000 blocks
+        on tick:yield 100000000000000000000000000*pow(1.15, onyxSpire) blocks
+        req:10000000000000000000000000000000000000000000 blocks:earned
+        
+    *enduranceSpire
+        name:Endurance Spire
+        desc:Endurance Spire.<//><b>Effect:</b><.>Produces 100000000000000000000000000000*pow(1.15, enduranceSpire) blocks and 0.01 gems every second.
+        cost:1000000000000000000000000000000000000000000000000 blocks, 1 gem
+        on tick:yield 100000000000000000000000000000*pow(1.15, enduranceSpire) blocks
+        on tick:yield 0.01 gems
+        req:1000000000000000000000000000000000000000000000000 blocks:earned and 1 gem:earned
+        
+    *judgmentTower
+        name:Judgment Tower
+        desc:Judgment Tower.<//><b>Effect:</b><.>Produces 100000000000000000000000000000000*pow(1.15, judgmentTower) blocks and 0.1 gems every second.
+        cost:100000000000000000000000000000000000000000000000000000 blocks, 10 gems
+        on tick:yield 100000000000000000000000000000000*pow(1.15, judgmentTower) blocks
+        on tick:yield 0.1 gems
+        req:100000000000000000000000000000000000000000000000000000 blocks:earned and 10 gems:earned
+        
+    *creedTower
+        name:Creed Tower
+        desc:Creed Tower.<//><b>Effect:</b><.>Produces 100000000000000000000000000000000000*pow(1.15, creedTower) blocks and 1 gem every second.
+        cost:10000000000000000000000000000000000000000000000000000000000 blocks, 100 gems
+        on tick:yield 100000000000000000000000000000000000*pow(1.15, creedTower) blocks
+        on tick:yield 1 gem
+        req:10000000000000000000000000000000000000000000000000000000000 blocks:earned and 100 gems:earned
+        
+    *diamondObelisk
+        name:Diamond Obelisk
+        desc:Diamond Obelisk.<//><b>Effect:</b><.>Produces 100000000000000000000000000000000000000*pow(1.15, diamondObelisk) blocks and 10 gems every second.
+        cost:1000000000000000000000000000000000000000000000000000000000000000 blocks, 1000 gems
+        on tick:yield 100000000000000000000000000000000000000*pow(1.15, diamondObelisk) blocks
+        on tick:yield 10 gems
+        req:1000000000000000000000000000000000000000000000000000000000000000 blocks:earned and 1000 gems:earned
+        
+    *centralLookout
+        name:Central Lookout
+        desc:Central Lookout.<//><b>Effect:</b><.>Produces 100000000000000000000000000000000000000000*pow(1.15, centralLookout) blocks and 100 gems every second.
+        cost:100000000000000000000000000000000000000000000000000000000000000000000 blocks, 10000 gems
+        on tick:yield 100000000000000000000000000000000000000000*pow(1.15, centralLookout) blocks
+        on tick:yield 100 gems
+        req:100000000000000000000000000000000000000000000000000000000000000000000 blocks:earned and 10000 gems:earned
+        
+        
+Upgrades
+	*TEMPLATE
+		on click:anim glow
+        
+    *buttonUpgrade1
+        name:Button Upgrade 1
+        desc:Block clicker produces twice more blocks.<//><b>Effect:</b><.>blocks/click x2
+        cost:10000 blocks
+        passive:multiply block yield of blockButton by 2
+        req:10000 blocks:earned
+        
+    *buttonUpgrade2
+        name:Button Upgrade 2
+        desc:Block clicker produces 5 times more blocks.<//><b>Effect:</b><.>blocks/click x5
+        cost:10000000 blocks
+        passive:multiply block yield of blockButton by 5
+        req:10000000 blocks:earned
+        
+    *buttonUpgrade3
+        name:Button Upgrade 3
+        desc:Block clicker produces 10 times more blocks.<//><b>Effect:</b><.>blocks/click x10
+        cost:1000000000000 blocks
+        passive:multiply block yield of blockButton by 10
+        req:1000000000000 blocks:earned
+        
+    *buttonUpgrade4
+        name:Button Upgrade 4
+        desc:Block clicker produces 20 times more blocks.<//><b>Effect:</b><.>blocks/click x20
+        cost:10000000000000000000 blocks
+        passive:multiply block yield of blockButton by 20
+        req:10000000000000000000 blocks:earned
+        
+    *buttonUpgrade5
+        name:Button Upgrade 5
+        desc:Block clicker produces 50 times more blocks.<//><b>Effect:</b><.>blocks/click x50
+        cost:10000000000000000000000000000 blocks
+        passive:multiply block yield of blockButton by 50
+        req:10000000000000000000000000000 blocks:earned
+        
+    *blockUpgrade1
+        name:Block Upgrade 1
+        desc:Twice more blocks produced.<//><b>Effect:</b><.>blocks/click x2<.>block production *2
+        cost:10000 blocks
+        passive:multiply block yield of blockButton by 2
+        passive:multiply yield of blocks by 2
+        req:10000 blocks:earned
+        
+    *blockUpgrade2
+        name:Block Upgrade 2
+        desc:5 times more blocks produced.<//><b>Effect:</b><.>blocks/click x5<.>block production *5
+        cost:10000000 blocks
+        passive:multiply block yield of blockButton by 5
+        passive:multiply yield of blocks by 5
+        req:10000000 blocks:earned
+        
+    *blockUpgrade3
+        name:Block Upgrade 3
+        desc:10 times more blocks produced.<//><b>Effect:</b><.>blocks/click x10<.>block production *10
+        cost:1000000000000 blocks
+        passive:multiply block yield of blockButton by 10
+        passive:multiply yield of blocks by 10
+        req:1000000000000 blocks:earned
+        
+    *blockUpgrade4
+        name:Block Upgrade 4
+        desc:20 times more blocks produced.<//><b>Effect:</b><.>blocks/click x20<.>block production *20
+        cost:10000000000000000000 blocks
+        passive:multiply block yield of blockButton by 20
+        passive:multiply yield of blocks by 20
+        req:10000000000000000000 blocks:earned
+        
+    *blockUpgrade5
+        name:Block Upgrade 5
+        desc:50 times more blocks produced.<//><b>Effect:</b><.>blocks/click x50<.>block production *50
+        cost:10000000000000000000000000000 blocks
+        passive:multiply block yield of blockButton by 50
+        passive:multiply yield of blocks by 50
+        req:10000000000000000000000000000 blocks:earned
+        
+        
+Achievements
+	*TEMPLATE
+		on click:anim glow
+        
+    *blockAchiev1
+        name:First block!
+        desc:Have <b>1</b> block.
+        req:1 block
+        
+    *blockAchiev2
+        name:Block Achievement 2
+        desc:Have <b>1000</b> blocks.
+        req:1000 blocks
+        
+    *blockAchiev3
+        name:Block Achievement 3
+        desc:Have <b>1000000</b> blocks.
+        req:1000000 blocks
+        
+    *blockAchiev4
+        name:Block Achievement 4
+        desc:Have <b>1000000000</b> blocks.
+        req:1000000000 blocks
+        
+    *blockAchiev5
+        name:Block Achievement 5
+        desc:Have <b>1000000000000</b> blocks.
+        req:1000000000000 blocks
+        
+    *blockPsAchiev1
+		name:Blocks Per Second Achievement 1
+		desc:Produce <b>10</b> blocks per second.
+		req:10 blocks per second
+        
+    *blockPsAchiev2
+		name:Blocks Per Second Achievement 2
+		desc:Produce <b>100</b> blocks per second.
+		req:100 blocks per second
+        
+    *blockPsAchiev3
+		name:Blocks Per Second Achievement 3
+		desc:Produce <b>10000</b> blocks per second.
+		req:10000 blocks per second
+        
+    *blockPsAchiev4
+		name:Blocks Per Second Achievement 4
+		desc:Produce <b>10000000</b> blocks per second.
+		req:10000000 blocks per second
+        
+    *blockPsAchiev5
+		name:Blocks Per Second Achievement 5
+		desc:Produce <b>100000000000</b> blocks per second.
+		req:100000000000 blocks per second
+        
+    *gemAchiev1
+        name:First gem!
+        desc:Have <b>1</b> gem.
+        req:1 gem
+        
+    *gemAchiev2
+        name:Gem Achievement 2
+        desc:Have <b>10</b> gems.
+        req:10 gems
+        
+    *gemAchiev3
+        name:Gem Achievement 3
+        desc:Have <b>100</b> gems.
+        req:100 gems
+        
+    *gemAchiev4
+        name:Gem Achievement 4
+        desc:Have <b>1000</b> gems.
+        req:1000 gems
+        
+    *gemAchiev5
+        name:Gem Achievement 5
+        desc:Have <b>10000</b> gems.
+        req:10000 gems
+        
+    *clickAchiev1
+        name:Click Achievement 1
+        desc:Click the block <b>10</b> times.
+        req:10 blockButton clicks
+        
+    *clickAchiev2
+        name:Click Achievement 2
+        desc:Click the block <b>100</b> times.
+        req:100 blockButton clicks
+        
+    *clickAchiev3
+        name:Click Achievement 3
+        desc:Click the block <b>1000</b> times.
+        req:1000 blockButton clicks
+        
+    *clickAchiev4
+        name:Click Achievement 4
+        desc:Click the block <b>10000</b> times.
+        req:10000 blockButton clicks
+        
+    *clickAchiev5
+        name:Click Achievement 5
+        desc:Click the block <b>100000</b> times.
+        req:100000 blockButton clicks
