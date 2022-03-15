@@ -1,7 +1,42 @@
 Let's make a game!
 	name:Block Clicker Online
-	by:DigitalCreativeApkDev
-	desc:
+	by:DigitalCreativeApkDev (https://github.com/DigitalCreativeApkDev)
+	desc:Enjoy the fun of building!
 	created:15/03/2022
 	updated:15/03/2022
 	version:1
+    
+    
+Settings
+	background:stuff/meadow.jpg
+	building cost increase:115%
+	building cost refund:50%
+	spritesheet:icons, 48 by 48, stuff/bunnyIcons.png
+	stylesheet:stuff/bigBlue.css
+
+Layout
+	use default
+    
+Buttons
+    *blockButton
+        name:Make a block
+        desc:Click this block to earn blocks!
+        icon:https://github.com/DigitalCreativeApkDev/BLOCK_CLICKER_ONLINE/blob/main/block.png
+        no text
+        
+Resources
+    *block|blocks
+        name:Block|Blocks
+        desc:Building block.
+        class:noBackground
+		show earned
+        
+    *gem|gems
+        name:Gem|Gems
+        desc:Rare gems to build larger and taller buildings.
+        class:noBackground
+        hidden when 0
+        
+Shinies
+    *luckyBlock
+        
