@@ -28,6 +28,10 @@ Buttons
         end
         icon:https://github.com/DigitalCreativeApkDev/BLOCK_CLICKER_ONLINE/blob/main/block.png
         no text
+        class:bigButton hasFlares
+		icon class:shadowed
+		tooltip origin:bottom
+		tooltip class:red
         
 Resources
     *block|blocks
