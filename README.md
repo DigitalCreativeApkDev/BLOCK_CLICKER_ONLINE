@@ -5,4 +5,4 @@ This repository contains all the files required for the game "Block Clicker Onli
 # Game Link
 
 To play the game, go to the link 
-https://orteil.dashnet.org/igm/?g=https://raw.githubusercontent.com/DigitalCreativeApkDev/BLOCK_CLICKER_ONLINE/main/BlockClickerOnline.txt
+https://orteil.dashnet.org/igm/?g=https%3A%2F%2Fraw.githubusercontent.com%2FDigitalCreativeApkDev%2FBLOCK_CLICKER_ONLINE%2Fmain%2FBlockClickerOnline.txt
