@@ -57,7 +57,7 @@ Shinies
             if (chance(15%))
                 $boost=random(1, 10)
                 // get between 1 to 5 minutes of the production of blocks
-                $amount=random(blocks:ps*60*1,blocks:ps*60*3)*$boost
+                $amount=random(blocks:ps*60*1,blocks:ps*60*5)*$boost
                 toast The lucky block grants you<//><b>[$amount] blocks</b>.
                 yield $amount blocks
             else
